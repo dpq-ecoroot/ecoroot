@@ -6,7 +6,6 @@
 
 <title>EcoRoot</title>
 
-<!-- Fonte mais moderna -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -16,11 +15,13 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #333;
 
+    /* 🖥️ IMAGEM DESKTOP */
     background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('Fundo.jpg');
+    url('Fundo-desktop.jpg');
+
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
+    background-attachment: fixed;
 }
 
 /* NAV */
@@ -55,7 +56,6 @@ header h1 {
 
 header p {
     font-size: 18px;
-    margin-top: 10px;
 }
 
 /* CONTAINER */
@@ -91,10 +91,18 @@ footer {
     padding: 20px;
 }
 
-/* ========================= */
-/* 📱 RESPONSIVO (TELEMÓVEL) */
-/* ========================= */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
+    body {
+        /* 📱 IMAGEM MOBILE */
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('Fundo-mobile.jpg');
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
 
     header {
         padding: 50px 15px;
@@ -109,22 +117,13 @@ footer {
     }
 
     nav a {
-        display: inline-block;
-        margin: 5px 8px;
         font-size: 13px;
+        margin: 5px 6px;
     }
 
     section {
         margin: 10px;
         padding: 20px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    body {
-        background-attachment: scroll; /* melhora performance no telemóvel */
     }
 }
 
@@ -150,44 +149,37 @@ footer {
 <section id="produto">
 <h2>O Produto</h2>
 <p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para produção de plantas em viveiro,
-permitindo plantio direto no solo sem remoção do recipiente.
-</p>
-<p>
-Produzido a partir de biopolímeros e fibras naturais, garante suporte estrutural e degrada-se após o transplante.
+EcoRoot é uma cuvete biodegradável para viveiros que pode ser plantada diretamente no solo.
 </p>
 </section>
 
 <section id="vantagens">
-<h2>Principais Vantagens</h2>
+<h2>Vantagens</h2>
 <ul>
-<li>Redução do uso de plástico</li>
-<li>Menor stress radicular</li>
-<li>Maior sobrevivência das plantas</li>
-<li>Melhor desenvolvimento radicular</li>
-<li>Uso mais eficiente de fertilizantes</li>
+<li>Menos plástico</li>
+<li>Menos stress radicular</li>
+<li>Maior sobrevivência</li>
+<li>Melhor crescimento</li>
+<li>Fertilização mais eficiente</li>
 </ul>
 </section>
 
 <section id="funcionamento">
-<h2>Como Funciona</h2>
+<h2>Funcionamento</h2>
 <p>
-Liberta nutrientes como NPK de forma gradual através da humidade do solo e degradação do material.
-</p>
-<p>
-A estrutura porosa permite melhor circulação de água e oxigénio para as raízes.
+Liberta nutrientes NPK gradualmente através da humidade e degradação do material.
 </p>
 </section>
 
 <section id="rotulo">
-<h2>Rótulo do Produto</h2>
+<h2>Rótulo</h2>
 
 <p>
-Inclui composição, instruções e sistema de libertação controlada de nutrientes.
+Inclui composição, instruções e QR code para informação técnica.
 </p>
 
-
 <img src="Rotulo.jpg">
+
 </section>
 
 </div>
@@ -197,5 +189,4 @@ Inclui composição, instruções e sistema de libertação controlada de nutrie
 </footer>
 
 </body>
-</html>
 </html>
