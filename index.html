@@ -2,94 +2,85 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EcoRoot</title>
 
-<!-- FONTES BONITAS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<!-- Fonte mais moderna -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: #333;
 
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
     url('Fundo.jpg');
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
 }
 
-/* MENU */
+/* NAV */
 nav {
     background: rgba(0,0,0,0.85);
-    padding: 15px;
+    padding: 12px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
+    margin: 0 10px;
     text-decoration: none;
     font-weight: 500;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #68d391;
+    font-size: 14px;
 }
 
 /* HEADER */
 header {
     text-align: center;
     color: white;
-    padding: 100px 20px;
+    padding: 80px 20px;
 }
 
 header h1 {
-    font-family: 'Merriweather', serif;
-    font-size: 60px;
-    margin-bottom: 10px;
+    font-size: 52px;
+    margin: 0;
 }
 
 header p {
-    font-size: 20px;
-    opacity: 0.9;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-/* CONTEÚDO */
+/* CONTAINER */
 .container {
     max-width: 1000px;
     margin: auto;
+    padding: 10px;
 }
 
+/* SECÇÕES */
 section {
     background: rgba(255,255,255,0.96);
-    margin: 25px;
-    padding: 35px;
+    margin: 20px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
 }
 
 h2 {
-    font-family: 'Merriweather', serif;
     color: #2f855a;
-    font-size: 28px;
-    margin-bottom: 15px;
 }
 
-p {
-    line-height: 1.7;
-    font-size: 16px;
-}
-
-ul {
-    line-height: 1.8;
-}
-
-/* IMAGEM DO RÓTULO */
+/* IMAGEM */
 img {
-    margin-top: 15px;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -97,9 +88,46 @@ img {
 footer {
     text-align: center;
     color: white;
-    padding: 25px;
-    font-size: 14px;
+    padding: 20px;
 }
+
+/* ========================= */
+/* 📱 RESPONSIVO (TELEMÓVEL) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 13px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    body {
+        background-attachment: scroll; /* melhora performance no telemóvel */
+    }
+}
+
 </style>
 </head>
 
@@ -113,7 +141,7 @@ footer {
 </nav>
 
 <header>
-    <h1>EcoRoot</h1>
+    <h1>🌱 EcoRoot</h1>
     <p>Cuvetes biodegradáveis com libertação controlada de nutrientes</p>
 </header>
 
@@ -121,79 +149,56 @@ footer {
 
 <section id="produto">
 <h2>O Produto</h2>
-
 <p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para a produção de plantas em viveiro,
-permitindo o seu plantio direto no solo sem necessidade de remoção do recipiente.
+O EcoRoot consiste numa cuvete biodegradável desenvolvida para produção de plantas em viveiro,
+permitindo plantio direto no solo sem remoção do recipiente.
 </p>
-
 <p>
-Produzido a partir de biopolímeros e fibras naturais, o material garante suporte estrutural durante
-o crescimento inicial e degrada-se progressivamente após o transplante.
+Produzido a partir de biopolímeros e fibras naturais, garante suporte estrutural e degrada-se após o transplante.
 </p>
-
 </section>
 
 <section id="vantagens">
 <h2>Principais Vantagens</h2>
-
 <ul>
-<li>Redução do uso de plásticos e impacto ambiental</li>
-<li>Diminuição do stress radicular no transplante</li>
-<li>Aumento da taxa de sobrevivência das plantas</li>
-<li>Melhoria do desenvolvimento radicular</li>
-<li>Maior eficiência no uso de fertilizantes</li>
+<li>Redução do uso de plástico</li>
+<li>Menor stress radicular</li>
+<li>Maior sobrevivência das plantas</li>
+<li>Melhor desenvolvimento radicular</li>
+<li>Uso mais eficiente de fertilizantes</li>
 </ul>
-
-<p>
-Ao integrar múltiplas funções num único produto, o EcoRoot contribui para um sistema de produção
-mais sustentável, eficiente e alinhado com os princípios da economia circular.
-</p>
-
 </section>
 
 <section id="funcionamento">
 <h2>Como Funciona</h2>
-
 <p>
-A cuvete incorpora nutrientes essenciais como azoto (N), fósforo (P) e potássio (K),
-que são libertados gradualmente no solo através da ação da humidade e da degradação do material.
+Liberta nutrientes como NPK de forma gradual através da humidade do solo e degradação do material.
 </p>
-
 <p>
-Este processo permite um fornecimento contínuo de nutrientes ao longo do tempo,
-reduzindo perdas por lixiviação e diminuindo a necessidade de fertilização adicional.
+A estrutura porosa permite melhor circulação de água e oxigénio para as raízes.
 </p>
-
-<p>
-Simultaneamente, a estrutura porosa do material facilita a circulação de água e oxigénio,
-promovendo condições ideais para o desenvolvimento das raízes.
-</p>
-
 </section>
 
 <section id="rotulo">
 <h2>Rótulo do Produto</h2>
 
 <p>
-O rótulo do EcoRoot inclui informações técnicas essenciais como composição,
-modo de utilização e características do sistema de libertação controlada de nutrientes.
+Inclui composição, instruções e sistema de libertação controlada de nutrientes.
 </p>
 
 <p>
-Inclui também um código QR que permite o acesso a informação adicional,
-como dados técnicos e recomendações específicas de utilização.
+Também inclui QR code para informação técnica adicional.
 </p>
 
-<img src="Rotulo.jpg" style="width:100%;">
-
+<img src="Rotulo.jpg">
 </section>
 
 </div>
 
 <footer>
-<p>Projeto – Universidade de Aveiro | Departamento de Química</p>
+<p>EcoRoot™ | Projeto académico</p>
 </footer>
 
 </body>
+</html>
 </html>
