@@ -22,9 +22,10 @@ body{
 }
 
 /* =========================
-   BACKGROUND HERO
+   HERO
 ========================= */
 .hero{
+    position:relative;
     background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
     background-size:cover;
@@ -36,6 +37,19 @@ body{
     text-align:center;
     color:white;
     padding:20px;
+}
+
+/* LOGO */
+.uni-logo{
+    position:absolute;
+    top:20px;
+    left:20px;
+}
+
+.uni-logo img{
+    height:60px;
+    width:auto;
+    filter: brightness(0) invert(1);
 }
 
 .hero-content{
@@ -105,7 +119,7 @@ h2{
 }
 
 /* =========================
-   FEATURES GRID
+   GRID
 ========================= */
 .grid{
     display:grid;
@@ -121,7 +135,7 @@ h2{
 }
 
 /* =========================
-   IMAGE RÓTULO
+   IMAGENS
 ========================= */
 img{
     width:100%;
@@ -172,6 +186,10 @@ footer{
         font-size:12px;
         margin:0 8px;
     }
+
+    .uni-logo img{
+        height:45px;
+    }
 }
 
 </style>
@@ -183,16 +201,22 @@ footer{
     <a href="#produto">Produto</a>
     <a href="#vantagens">Vantagens</a>
     <a href="#funcionamento">Funcionamento</a>
-    <a href="#composicao">Composição</a>
     <a href="#rotulo">Rótulo</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+
+    <!-- LOGO -->
+    <div class="uni-logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
     <div class="hero-content">
         <h1>EcoRoot</h1>
         <p>Cuvetes biodegradáveis com libertação controlada de nutrientes para uma produção florestal mais eficiente e sustentável</p>
     </div>
+
 </section>
 
 <!-- PRODUTO -->
@@ -236,31 +260,6 @@ A cuvete integra nutrientes essenciais (NPK), libertados gradualmente através d
 
 <p>
 A estrutura porosa favorece a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
-</p>
-
-</div>
-
-<!-- NOVA SECÇÃO: COMPOSIÇÃO -->
-<div class="card" id="composicao">
-<h2>Composição e Fundamentação</h2>
-
-<p>
-O EcoRoot é um biocompósito desenvolvido para equilibrar resistência mecânica, biodegradabilidade e funcionalidade agronómica.
-A sua formulação foi otimizada para aplicações em viveiros florestais e agrícolas.
-</p>
-
-<p><b>Amido termoplástico (50–60%)</b> – matriz biodegradável responsável pela estrutura e degradação controlada do material.</p>
-
-<p><b>Fibras de celulose (20–30%)</b> – reforço estrutural proveniente de resíduos agroindustriais, aumentando a resistência mecânica.</p>
-
-<p><b>Fertilizante NPK (10–20%)</b> – fornece azoto (crescimento), fósforo (raízes) e potássio (resistência ao stress).</p>
-
-<p><b>Glicerol (5–10%)</b> – plastificante que melhora a flexibilidade e processabilidade do material.</p>
-
-<p><b>Estearato de magnésio (0,5–1%)</b> – agente desmoldante que facilita a produção industrial.</p>
-
-<p>
-Esta combinação permite um equilíbrio entre desempenho estrutural, libertação controlada de nutrientes e sustentabilidade ambiental.
 </p>
 
 </div>
