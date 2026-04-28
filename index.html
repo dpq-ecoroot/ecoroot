@@ -6,124 +6,171 @@
 
 <title>EcoRoot</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
+/* =========================
+   BASE
+========================= */
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:#111827;
+    background:#000;
+    line-height:1.6;
+}
 
-    /* 🖥️ IMAGEM DESKTOP */
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+/* =========================
+   BACKGROUND HERO
+========================= */
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
-/* NAV */
-nav {
-    background: rgba(0,0,0,0.85);
-    padding: 12px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.hero-content{
+    max-width:800px;
 }
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
+.hero h1{
+    font-size:64px;
+    margin:0;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    color: white;
-    padding: 80px 20px;
+.hero p{
+    font-size:18px;
+    font-weight:300;
+    margin-top:15px;
+    opacity:0.9;
 }
 
-header h1 {
-    font-size: 52px;
-    margin: 0;
+/* =========================
+   NAV
+========================= */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.75);
+    padding:14px;
+    text-align:center;
+    z-index:1000;
+    backdrop-filter: blur(10px);
 }
 
-header p {
-    font-size: 18px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 14px;
+    font-size:14px;
+    font-weight:500;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px;
+/* =========================
+   CONTAINER
+========================= */
+.container{
+    background:#f9fafb;
+    padding:60px 20px;
 }
 
-/* SECÇÕES */
-section {
-    background: rgba(255,255,255,0.96);
-    margin: 20px;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+/* =========================
+   CARDS
+========================= */
+.card{
+    max-width:1000px;
+    margin:20px auto;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-h2 {
-    color: #2f855a;
+h2{
+    color:#166534;
+    font-size:26px;
+    margin-bottom:15px;
 }
 
-/* IMAGEM */
-img {
-    width: 100%;
-    border-radius: 10px;
+/* =========================
+   FEATURES GRID
+========================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    color: white;
-    padding: 20px;
+.feature{
+    background:#f3f4f6;
+    padding:18px;
+    border-radius:12px;
+    font-size:15px;
 }
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
+/* =========================
+   IMAGE RÓTULO
+========================= */
+img{
+    width:100%;
+    border-radius:14px;
+    margin-top:15px;
+}
 
-    body {
-        /* 📱 IMAGEM MOBILE */
-        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+/* =========================
+   FOOTER
+========================= */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111827;
+    color:white;
+    font-size:13px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+    .hero{
+        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
-
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll;
+        background-size:cover;
+        background-position:center;
     }
 
-    header {
-        padding: 50px 15px;
+    .hero h1{
+        font-size:38px;
     }
 
-    header h1 {
-        font-size: 34px;
+    .hero p{
+        font-size:14px;
     }
 
-    header p {
-        font-size: 14px;
+    .card{
+        padding:22px;
     }
 
-    nav a {
-        font-size: 13px;
-        margin: 5px 6px;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    section {
-        margin: 10px;
-        padding: 20px;
+    nav a{
+        font-size:12px;
+        margin:0 8px;
     }
 }
 
@@ -139,53 +186,79 @@ footer {
     <a href="#rotulo">Rótulo</a>
 </nav>
 
-<header>
-    <h1>EcoRoot</h1>
-    <p>Cuvetes biodegradáveis com libertação controlada de nutrientes</p>
-</header>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>EcoRoot</h1>
+        <p>Cuvetes biodegradáveis com libertação controlada de nutrientes para uma produção florestal mais eficiente e sustentável</p>
+    </div>
+</section>
 
-<div class="container">
+<!-- PRODUTO -->
+<section class="container" id="produto">
 
-<section id="produto">
+<div class="card">
 <h2>O Produto</h2>
+
 <p>
-EcoRoot é uma cuvete biodegradável para viveiros que pode ser plantada diretamente no solo.
+O EcoRoot é uma cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o transplante direto para o solo sem remoção do recipiente.
 </p>
-</section>
 
-<section id="vantagens">
-<h2>Vantagens</h2>
-<ul>
-<li>Menos plástico</li>
-<li>Menos stress radicular</li>
-<li>Maior sobrevivência</li>
-<li>Melhor crescimento</li>
-<li>Fertilização mais eficiente</li>
-</ul>
-</section>
-
-<section id="funcionamento">
-<h2>Funcionamento</h2>
 <p>
-Liberta nutrientes NPK gradualmente através da humidade e degradação do material.
+É produzido com biopolímeros de origem renovável e fibras naturais, garantindo resistência durante o crescimento inicial e degradação após a plantação.
 </p>
-</section>
 
-<section id="rotulo">
-<h2>Rótulo</h2>
+</div>
+
+<!-- VANTAGENS -->
+<div class="card" id="vantagens">
+<h2>Principais Vantagens</h2>
+
+<div class="grid">
+<div class="feature">🌱 Redução do impacto ambiental do plástico</div>
+<div class="feature">🌿 Menor stress radicular no transplante</div>
+<div class="feature">📈 Maior taxa de sobrevivência das plantas</div>
+<div class="feature">💧 Melhor desenvolvimento radicular</div>
+<div class="feature">🌾 Maior eficiência de fertilização</div>
+<div class="feature">⚙️ Sistema 2-em-1: suporte + nutrição</div>
+</div>
+
+</div>
+
+<!-- FUNCIONAMENTO -->
+<div class="card" id="funcionamento">
+<h2>Como Funciona</h2>
 
 <p>
-Inclui composição, instruções e QR code para informação técnica.
+A cuvete integra nutrientes essenciais (NPK), libertados gradualmente através da humidade do solo e da degradação do material.
+</p>
+
+<p>
+A estrutura porosa favorece a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
+</p>
+
+</div>
+
+<!-- RÓTULO -->
+<div class="card" id="rotulo">
+<h2>Rótulo do Produto</h2>
+
+<p>
+O rótulo inclui composição, instruções de utilização e informação técnica sobre o sistema de libertação controlada de nutrientes.
+</p>
+
+<p>
+Inclui também um QR code para acesso a dados técnicos adicionais e recomendações de utilização.
 </p>
 
 <img src="Rotulo.jpg">
 
-</section>
-
 </div>
 
+</section>
+
 <footer>
-<p>EcoRoot™ | Projeto académico</p>
+EcoRoot™ | Projeto académico – Solução inovadora para produção vegetal sustentável
 </footer>
 
 </body>
