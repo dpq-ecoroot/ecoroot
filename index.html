@@ -130,48 +130,90 @@ footer{
     color:white;
 }
 
-/* HERO TEXT (ALTERAÇÃO AQUI) */
+/* HERO TEXT */
 .hero h1{
-    font-size:72px;   /* AUMENTADO */
+    font-size:72px;
     margin:0;
     font-weight:700;
 }
 
 .hero p{
-    font-size:22px;   /* AUMENTADO */
+    font-size:22px;
     margin-top:10px;
     font-weight:300;
     opacity:0.95;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE (AJUSTADO SÓ AQUI)
+========================= */
 @media(max-width:768px){
 
+    /* HERO mais equilibrado no telemóvel */
     .hero{
         background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
+        height:90vh;
+        padding:20px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .hero h1{
+        font-size:42px;   /* mais proporcional */
     }
 
+    .hero p{
+        font-size:16px;
+        padding:0 10px;
+    }
+
+    /* NAV mais limpa no mobile */
     nav{
-        padding:18px 15px;
+        padding:14px 10px;
+        justify-content:flex-end;
+    }
+
+    .nav-left{
+        left:10px;
     }
 
     .nav-left img{
-        width:85px;
+        width:75px;
+        padding:4px;
     }
 
     .nav-center{
-        gap:10px;
+        gap:8px;
         flex-wrap:wrap;
         justify-content:center;
     }
 
     nav a{
-        font-size:13px;
+        font-size:12px;
+    }
+
+    /* CARDS mais compactos */
+    .card{
+        padding:22px;
+        margin:15px 10px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    /* GRID 1 coluna */
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        font-size:14px;
+        padding:14px;
+    }
+
+    /* imagem menos “pesada” no mobile */
+    img{
+        border-radius:10px;
     }
 }
 
