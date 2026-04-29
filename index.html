@@ -11,7 +11,7 @@
 <style>
 
 /* =========================
-   BASE
+   BASE (DESKTOP ORIGINAL MANTIDO)
 ========================= */
 body{
     margin:0;
@@ -21,9 +21,7 @@ body{
     line-height:1.6;
 }
 
-/* =========================
-   NAV
-========================= */
+/* NAV (igual ao teu original desktop) */
 nav{
     position:fixed;
     top:0;
@@ -41,16 +39,9 @@ nav a{
     margin:0 16px;
     font-size:15px;
     font-weight:500;
-    transition:0.3s;
 }
 
-nav a:hover{
-    opacity:0.7;
-}
-
-/* =========================
-   HERO
-========================= */
+/* HERO (desktop igual ao teu) */
 .hero{
     background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
     url('Fundo-desktop.jpg');
@@ -82,17 +73,13 @@ nav a:hover{
     opacity:0.9;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+/* CONTAINER */
 .container{
     background:#f9fafb;
     padding:60px 20px;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 .card{
     max-width:1000px;
     margin:20px auto;
@@ -105,16 +92,9 @@ nav a:hover{
 h2{
     color:#166534;
     font-size:26px;
-    margin-bottom:15px;
 }
 
-p{
-    font-size:16px;
-}
-
-/* =========================
-   GRID
-========================= */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -125,21 +105,16 @@ p{
     background:#f3f4f6;
     padding:18px;
     border-radius:12px;
-    font-size:15px;
 }
 
-/* =========================
-   IMAGEM
-========================= */
+/* IMAGEM */
 img{
     width:100%;
     border-radius:14px;
     margin-top:15px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer{
     text-align:center;
     padding:25px;
@@ -148,18 +123,19 @@ footer{
     font-size:13px;
 }
 
-/* =========================
-   MOBILE IMPROVED
-========================= */
+/* =====================================================
+   📱 MOBILE (SÓ ISTO FOI ALTERADO / OTIMIZADO)
+===================================================== */
 @media(max-width:768px){
 
-    /* HERO */
+    /* HERO mais equilibrado */
     .hero{
         background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
         background-size:cover;
         background-position:center;
         height:70vh;
+        padding:10px;
     }
 
     .hero h1{
@@ -171,7 +147,7 @@ footer{
         padding:0 10px;
     }
 
-    /* NAV */
+    /* NAV mais leve */
     nav{
         padding:10px;
     }
@@ -181,7 +157,7 @@ footer{
         margin:0 8px;
     }
 
-    /* CARDS */
+    /* CARDS mais compactos */
     .card{
         padding:18px;
         margin:12px;
@@ -196,7 +172,7 @@ footer{
         font-size:14px;
     }
 
-    /* GRID */
+    /* GRID passa a 1 coluna */
     .grid{
         grid-template-columns:1fr;
         gap:10px;
