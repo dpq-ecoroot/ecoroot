@@ -43,7 +43,7 @@ nav{
     top:0;
     width:100%;
     background:rgba(0,0,0,0.9);
-    padding:32px 20px; /* 🔥 MAIS ALTA */
+    padding:34px 20px;
     z-index:1000;
     backdrop-filter: blur(10px);
 
@@ -60,14 +60,12 @@ nav{
 
 .nav-left img{
     width:115px;
-    height:auto;
-    object-fit:contain;
     background:white;
     padding:6px;
     border-radius:6px;
 }
 
-/* LINKS DESKTOP */
+/* LINKS */
 .nav-center{
     display:flex;
     gap:22px;
@@ -90,6 +88,7 @@ nav a{
     font-size:30px;
     color:white;
     cursor:pointer;
+    user-select:none;
 }
 
 /* CONTAINER */
@@ -98,7 +97,6 @@ nav a{
     padding:60px 20px;
 }
 
-/* CARDS */
 .card{
     max-width:1000px;
     margin:20px auto;
@@ -108,142 +106,54 @@ nav a{
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-h2{
-    color:#166534;
-    font-size:24px;
-    margin-bottom:12px;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.feature{
-    background:#f3f4f6;
-    padding:18px;
-    border-radius:12px;
-}
-
-/* IMG */
-img{
-    width:100%;
-    border-radius:14px;
-    margin-top:15px;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:25px;
-    background:#111827;
-    color:white;
-}
-
 /* HERO TEXT */
 .hero h1{
     font-size:72px;
     margin:0;
-    font-weight:700;
 }
 
 .hero p{
     font-size:22px;
-    margin-top:10px;
-    font-weight:300;
     opacity:0.95;
 }
 
 /* =========================
-   MOBILE FINAL CLEAN NAV
+   MOBILE
 ========================= */
 @media(max-width:768px){
 
-    .hero{
-        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-        url('Fundo-mobile.jpg');
-        height:90vh;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    /* NAV MAIS ALTA E LIMPA */
     nav{
-        padding:34px 12px; /* 🔥 ainda mais alta */
+        padding:34px 12px;
         justify-content:flex-start;
     }
 
-    .nav-left img{
-        width:75px;
-        padding:4px;
-    }
-
-    /* BOTÃO SEMPRE VISÍVEL */
     .menu-toggle{
         display:block;
-        right:14px;
     }
 
-    /* MENU LIGADO À BARRA */
     .nav-center{
         display:none;
         position:absolute;
-        top:100%; /* 🔥 colado à barra */
+        top:100%;
         left:0;
         width:100%;
         background:rgba(0,0,0,0.95);
 
-        padding:10px 0;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
 
-        display:grid;
-        grid-template-columns:repeat(2, 1fr); /* 🔥 2 colunas */
-        gap:10px;
-        text-align:center;
+        padding:12px 10px;
     }
 
     .nav-center.active{
-        display:grid;
+        display:flex;
     }
 
     nav a{
         font-size:13px;
-        padding:8px 0;
-    }
-
-    /* força "Composição" e "Rótulo" alinhados na última linha */
-    .nav-center a:nth-child(5),
-    .nav-center a:nth-child(4){
-        grid-column: span 1;
-    }
-
-    .card{
-        padding:22px;
-        margin:15px 10px;
-    }
-
-    h2{
-        font-size:20px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .feature{
-        font-size:14px;
-        padding:14px;
-    }
-
-    img{
-        border-radius:10px;
+        padding:6px 10px;
     }
 }
 
@@ -258,8 +168,10 @@ footer{
         <img src="logo.png">
     </div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- BOTÃO -->
+    <div class="menu-toggle" id="menuBtn" onclick="toggleMenu()">☰</div>
 
+    <!-- MENU -->
     <div class="nav-center" id="menu">
         <a href="#produto" onclick="closeMenu()">Produto</a>
         <a href="#vantagens" onclick="closeMenu()">Vantagens</a>
@@ -278,60 +190,31 @@ footer{
     </div>
 </section>
 
-<section class="container">
-
-<div class="card" id="produto">
-<h2>O Produto</h2>
-<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas.</p>
-<p>Permite o plantio direto no solo sem necessidade de remoção do recipiente.</p>
-</div>
-
-<div class="card" id="vantagens">
-<h2>Principais Vantagens</h2>
-
-<div class="grid">
-<div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
-<div class="feature">🌿 Menor stress radicular durante o transplante</div>
-<div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
-<div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
-<div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
-<div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
-</div>
-
-</div>
-
-<div class="card" id="funcionamento">
-<h2>Como Funciona</h2>
-<p>A cuvete liberta nutrientes gradualmente no solo através da humidade e degradação.</p>
-<p>A estrutura porosa melhora água e oxigénio para as raízes.</p>
-</div>
-
-<div class="card" id="composicao">
-<h2>Composição</h2>
-<p>Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.</p>
-<p>Garante biodegradabilidade e resistência estrutural.</p>
-</div>
-
-<div class="card" id="rotulo">
-<h2>Rótulo do Produto</h2>
-<p>Inclui informação técnica e QR code para dados adicionais.</p>
-<img src="Rotulo.jpg">
-</div>
-
-</section>
-
-<footer>
-EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
-</footer>
-
 <script>
+
+let open = false;
+
 function toggleMenu(){
-    document.getElementById("menu").classList.toggle("active");
+    const menu = document.getElementById("menu");
+    const btn = document.getElementById("menuBtn");
+
+    open = !open;
+
+    if(open){
+        menu.classList.add("active");
+        btn.innerHTML = "✕";
+    } else {
+        menu.classList.remove("active");
+        btn.innerHTML = "☰";
+    }
 }
 
 function closeMenu(){
     document.getElementById("menu").classList.remove("active");
+    document.getElementById("menuBtn").innerHTML = "☰";
+    open = false;
 }
+
 </script>
 
 </body>
