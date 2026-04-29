@@ -52,7 +52,7 @@ nav{
     justify-content:center;
 }
 
-/* LOGO ESQUERDA */
+/* LOGO */
 .nav-left{
     position:absolute;
     left:20px;
@@ -78,6 +78,16 @@ nav a{
     text-decoration:none;
     font-size:16px;
     font-weight:500;
+}
+
+/* HAMBURGER (OCULTO NO DESKTOP) */
+.menu-toggle{
+    display:none;
+    position:absolute;
+    right:20px;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
 }
 
 /* CONTAINER */
@@ -145,7 +155,7 @@ footer{
 }
 
 /* =========================
-   MOBILE (3 em cima + 2 em baixo)
+   MOBILE MENU
 ========================= */
 @media(max-width:768px){
 
@@ -165,42 +175,38 @@ footer{
 
     /* NAV MOBILE */
     nav{
-        padding:12px 10px;
-        flex-direction:row;
-        align-items:flex-start;
-    }
-
-    .nav-left{
-        position:relative;
-        left:0;
-        margin-right:10px;
+        justify-content:flex-start;
+        padding:14px 10px;
     }
 
     .nav-left img{
-        width:70px;
+        width:75px;
         padding:4px;
     }
 
-    /* 🔥 GRID 3 EM CIMA + 2 EM BAIXO */
+    /* HAMBURGER VISÍVEL */
+    .menu-toggle{
+        display:block;
+    }
+
+    /* MENU FECHADO POR DEFAULT */
     .nav-center{
-        display:grid;
-        grid-template-columns:repeat(3, 1fr);
-        grid-template-rows:auto auto;
-        gap:6px;
+        display:none;
+        flex-direction:column;
         width:100%;
+        margin-top:60px;
         text-align:center;
+        gap:12px;
     }
 
-    .nav-center a{
-        font-size:11px;
-        padding:6px 0;
-        white-space:nowrap;
+    /* MENU ABERTO */
+    .nav-center.active{
+        display:flex;
     }
 
-    /* força quebra visual correta (3 + 2) */
-    .nav-center a:nth-child(4),
-    .nav-center a:nth-child(5){
-        grid-column: span 1;
+    nav a{
+        font-size:14px;
+        padding:8px 0;
     }
 
     .card{
@@ -237,7 +243,9 @@ footer{
         <img src="logo.png">
     </div>
 
-    <div class="nav-center">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-center" id="menu">
         <a href="#produto">Produto</a>
         <a href="#vantagens">Vantagens</a>
         <a href="#funcionamento">Funcionamento</a>
@@ -300,6 +308,12 @@ footer{
 <footer>
 EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
