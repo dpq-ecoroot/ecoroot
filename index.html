@@ -145,11 +145,10 @@ footer{
 }
 
 /* =========================
-   MOBILE (AJUSTADO SÓ AQUI)
+   MOBILE (CORRIGIDO)
 ========================= */
 @media(max-width:768px){
 
-    /* HERO mais equilibrado no telemóvel */
     .hero{
         background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
         url('Fundo-mobile.jpg');
@@ -158,7 +157,7 @@ footer{
     }
 
     .hero h1{
-        font-size:42px;   /* mais proporcional */
+        font-size:42px;
     }
 
     .hero p{
@@ -166,32 +165,38 @@ footer{
         padding:0 10px;
     }
 
-    /* NAV mais limpa no mobile */
+    /* NAV CORRIGIDA */
     nav{
         padding:14px 10px;
-        justify-content:flex-end;
+        justify-content:center;
+        flex-wrap:wrap; /* 🔥 permite não cortar */
     }
 
     .nav-left{
-        left:10px;
+        position:relative;
+        left:0;
+        margin-right:10px;
     }
 
     .nav-left img{
-        width:75px;
+        width:70px;
         padding:4px;
     }
 
     .nav-center{
-        gap:8px;
-        flex-wrap:wrap;
+        display:flex;
+        flex-wrap:wrap;        /* 🔥 chave do fix */
         justify-content:center;
+        gap:6px;
+        max-width:100%;
     }
 
     nav a{
-        font-size:12px;
+        font-size:11px;
+        padding:4px 6px;
+        white-space:nowrap;
     }
 
-    /* CARDS mais compactos */
     .card{
         padding:22px;
         margin:15px 10px;
@@ -201,7 +206,6 @@ footer{
         font-size:20px;
     }
 
-    /* GRID 1 coluna */
     .grid{
         grid-template-columns:1fr;
     }
@@ -211,7 +215,6 @@ footer{
         padding:14px;
     }
 
-    /* imagem menos “pesada” no mobile */
     img{
         border-radius:10px;
     }
@@ -250,15 +253,8 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-
-<p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
-</p>
-
-<p>
-Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
-</p>
-
+<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.</p>
+<p>Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -277,43 +273,21 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
-
-<p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
-</p>
-
-<p>
-A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
-</p>
-
+<p>A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.</p>
+<p>A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.</p>
 </div>
 
 <div class="card" id="composicao">
 <h2>Composição</h2>
-
-<p>
-O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
-</p>
-
-<p>
-O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
-</p>
-
-<p>
-A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
-</p>
-
+<p>O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.</p>
+<p>O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.</p>
+<p>A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.</p>
 </div>
 
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
-
-<p>
-O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
-</p>
-
+<p>O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.</p>
 <img src="Rotulo.jpg">
-
 </div>
 
 </section>
