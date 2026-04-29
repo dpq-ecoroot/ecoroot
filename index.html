@@ -43,7 +43,7 @@ nav{
     top:0;
     width:100%;
     background:rgba(0,0,0,0.85);
-    padding:28px 20px; /* 🔥 ligeiramente maior */
+    padding:28px 20px;
     z-index:1000;
     backdrop-filter: blur(10px);
 
@@ -80,16 +80,17 @@ nav a{
     font-weight:500;
 }
 
-/* HAMBURGER */
+/* BOTÃO */
 .menu-toggle{
     display:none;
     position:absolute;
-    right:18px; /* 🔥 alinhado correto */
+    right:14px;
     top:50%;
     transform:translateY(-50%);
-    font-size:28px;
+    font-size:30px;
     color:white;
     cursor:pointer;
+    z-index:2000;
 }
 
 /* CONTAINER */
@@ -175,34 +176,36 @@ footer{
         font-size:16px;
     }
 
-    /* 🔥 BARRA MAIS ALTA */
+    /* NAV */
     nav{
         padding:26px 12px;
         justify-content:flex-start;
     }
 
-    /* LOGO */
     .nav-left img{
         width:75px;
         padding:4px;
     }
 
-    /* 🔥 BOTÃO CORRIGIDO */
+    /* BOTÃO GARANTIDO VISÍVEL */
     .menu-toggle{
         display:block;
-        right:14px; /* alinhado perfeito */
-        top:50%;
-        transform:translateY(-50%);
-        font-size:30px;
+        right:14px;
     }
 
-    /* MENU */
+    /* MENU MOBILE HORIZONTAL */
     .nav-center{
         display:none;
-        flex-direction:column;
+        position:absolute;
+        top:80px;
+        left:0;
         width:100%;
-        margin-top:70px;
-        text-align:center;
+        background:rgba(0,0,0,0.95);
+        padding:12px 10px;
+
+        flex-direction:row;
+        justify-content:center;
+        flex-wrap:wrap;
         gap:12px;
     }
 
@@ -211,8 +214,8 @@ footer{
     }
 
     nav a{
-        font-size:14px;
-        padding:8px 0;
+        font-size:13px;
+        padding:6px 10px;
     }
 
     .card{
