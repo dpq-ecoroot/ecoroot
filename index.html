@@ -90,6 +90,21 @@ nav a{
     cursor:pointer;
 }
 
+/* CONTAINER */
+.container{
+    background:#f9fafb;
+    padding:60px 20px;
+}
+
+.card{
+    max-width:1000px;
+    margin:20px auto;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
 /* HERO TEXT */
 .hero h1{
     font-size:72px;
@@ -102,11 +117,11 @@ nav a{
 }
 
 /* =========================
-   MOBILE FINAL (3 + 2)
+   MOBILE (SÓ NAV ALTERADA)
 ========================= */
 @media(max-width:768px){
 
-    /* 🔲 barra ligeiramente menor */
+    /* barra um pouco mais pequena */
     nav{
         padding:28px 12px;
         justify-content:flex-start;
@@ -121,7 +136,7 @@ nav a{
         padding:4px;
     }
 
-    /* MENU 3 EM CIMA + 2 EM BAIXO */
+    /* MENU 3 + 2 LIMPO */
     .nav-center{
         display:none;
         position:absolute;
@@ -140,12 +155,6 @@ nav a{
 
     .nav-center.active{
         display:grid;
-    }
-
-    /* força o 3 + 2 */
-    .nav-center a:nth-child(4),
-    .nav-center a:nth-child(5){
-        grid-column: span 1;
     }
 
     nav a{
@@ -191,6 +200,36 @@ nav a{
         <h1>EcoRoot</h1>
         <p>Cuvetes biodegradáveis com libertação controlada de nutrientes</p>
     </div>
+</section>
+
+<!-- RESTO DO TEU SITE FICA IGUAL -->
+<section class="container">
+
+<div class="card" id="produto">
+<h2>O Produto</h2>
+<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas.</p>
+</div>
+
+<div class="card" id="vantagens">
+<h2>Principais Vantagens</h2>
+<p>...</p>
+</div>
+
+<div class="card" id="funcionamento">
+<h2>Como Funciona</h2>
+<p>...</p>
+</div>
+
+<div class="card" id="composicao">
+<h2>Composição</h2>
+<p>...</p>
+</div>
+
+<div class="card" id="rotulo">
+<h2>Rótulo do Produto</h2>
+<p>...</p>
+</div>
+
 </section>
 
 <script>
