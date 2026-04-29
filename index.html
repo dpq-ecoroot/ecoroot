@@ -92,7 +92,7 @@ nav a{
     padding:8px 18px;
 }
 
-/* MOBILE MENU */
+/* MENU MOBILE */
 .mobile-menu{
     position:fixed;
     left:0;
@@ -106,9 +106,8 @@ nav a{
 
     max-height:0;
     overflow:hidden;
-    opacity:0;
 
-    transition:max-height 0.4s ease, opacity 0.3s ease;
+    transition:max-height 0.4s ease;
 }
 
 .mobile-menu a{
@@ -119,7 +118,7 @@ nav a{
     border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-/* CONTEÚDO */
+/* CONTAINER */
 .container{
     background:#f9fafb;
     padding:60px 20px;
@@ -142,7 +141,7 @@ h2{
 
 .grid{
     display:grid;
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
@@ -152,42 +151,14 @@ h2{
     border-radius:12px;
 }
 
-/* IMAGENS */
+/* IMG */
 img{
     width:100%;
     border-radius:14px;
     margin-top:15px;
 }
 
-/* LIGHTBOX */
-.lightbox{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.95);
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
-
-.lightbox img{
-    width:90%;
-    max-width:700px;
-    border-radius:12px;
-}
-
-.lightbox span{
-    position:absolute;
-    top:20px;
-    right:25px;
-    color:white;
-    font-size:32px;
-    cursor:pointer;
-}
-
+/* FOOTER */
 footer{
     text-align:center;
     padding:25px;
@@ -195,6 +166,7 @@ footer{
     color:white;
 }
 
+/* HERO TEXT */
 .hero h1{
     font-size:72px;
     margin:0;
@@ -211,13 +183,34 @@ footer{
 /* MOBILE */
 @media(max-width:768px){
 
+    .hero{
+        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url('Fundo-mobile.jpg');
+        height:90vh;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+        padding:0 10px;
+    }
+
     nav{
         padding:28px 10px;
         justify-content:flex-end;
     }
 
+    .nav-left{
+        left:10px;
+    }
+
     .nav-left img{
         width:95px;
+        padding:4px;
         margin-top:8px;
     }
 
@@ -227,6 +220,10 @@ footer{
 
     .menu-btn{
         display:block;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -254,6 +251,16 @@ footer{
 
 </nav>
 
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#produto" onclick="toggleMenu()">Produto</a>
+    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#funcionamento" onclick="toggleMenu()">Funcionamento</a>
+    <a href="#composicao" onclick="toggleMenu()">Composição</a>
+    <a href="#rotulo" onclick="toggleMenu()">Rótulo</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
     <div>
         <h1>EcoRoot</h1>
@@ -265,15 +272,12 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-
 <p>
 O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
 </p>
-
 <p>
 Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
 </p>
-
 </div>
 
 <div class="card" id="vantagens">
@@ -292,85 +296,54 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
-
 <p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
+A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), libertados gradualmente no solo.
 </p>
-
 <p>
-A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
+A estrutura porosa facilita água e oxigénio para o desenvolvimento radicular.
 </p>
-
 </div>
 
 <div class="card" id="composicao">
 <h2>Composição</h2>
-
 <p>
-O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
+Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
 </p>
-
 <p>
-O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
+Material biodegradável e estrutural.
 </p>
-
-<p>
-A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
-</p>
-
 </div>
 
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
-
 <p>
-O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
+Informação técnica e instruções de utilização.
 </p>
 
-<!-- IMAGEM CLICÁVEL -->
-<img src="Rotulo.jpg" onclick="openLightbox(this.src)">
+<img src="Rotulo.jpg">
 
 </div>
 
 </section>
 
 <footer>
-EcoRoot™ | Projeto académico
+EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <span>&times;</span>
-    <img id="lightboxImg">
-</div>
 
 <script>
 
 function toggleMenu(){
+
     const menu = document.getElementById("mobileMenu");
-    const btn = document.getElementById("menuBtn");
-    const isOpen = menu.style.maxHeight && menu.style.maxHeight !== "0px";
 
-    if(isOpen){
+    if(menu.style.maxHeight && menu.style.maxHeight !== "0px"){
         menu.style.maxHeight = "0px";
-        menu.style.opacity = "0";
-        btn.innerHTML = "☰";
-    }else{
-        const nav = document.querySelector("nav");
-        menu.style.top = nav.offsetHeight + "px";
-        menu.style.maxHeight = "600px";
-        menu.style.opacity = "1";
-        btn.innerHTML = "✕";
+    } else {
+        const navHeight = document.querySelector("nav").offsetHeight;
+        menu.style.top = navHeight + "px";
+        menu.style.maxHeight = "500px";
     }
-}
 
-function openLightbox(src){
-    document.getElementById("lightboxImg").src = src;
-    document.getElementById("lightbox").style.display = "flex";
-}
-
-function closeLightbox(){
-    document.getElementById("lightbox").style.display = "none";
 }
 
 </script>
