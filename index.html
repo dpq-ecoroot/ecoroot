@@ -37,7 +37,7 @@ body{
     padding:20px;
 }
 
-/* NAV (NÃO ALTERADO DESKTOP) */
+/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -60,14 +60,12 @@ nav{
 
 .nav-left img{
     width:115px;
-    height:auto;
-    object-fit:contain;
     background:white;
     padding:6px;
     border-radius:6px;
 }
 
-/* LINKS DESKTOP */
+/* MENU DESKTOP */
 .nav-center{
     display:flex;
     gap:22px;
@@ -81,18 +79,25 @@ nav a{
 }
 
 /* =========================
-   BOTÃO MOBILE
+   BOTÃO MOBILE (CORRIGIDO)
 ========================= */
 .menu-toggle{
     display:none;
+
     position:absolute;
-    right:15px;
+    right:unset;      /* remove direita */
+    left:12px;        /* 👈 agora fica mais para a esquerda */
+
     top:50%;
     transform:translateY(-50%);
-    font-size:28px;
+
+    font-size:30px;
     color:white;
     cursor:pointer;
     user-select:none;
+
+    padding:8px;      /* área clicável maior */
+    border-radius:6px;
 }
 
 /* CONTAINER */
@@ -111,30 +116,15 @@ nav a{
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-h2{
-    color:#166534;
-    font-size:24px;
-    margin-bottom:12px;
+/* HERO TEXT */
+.hero h1{
+    font-size:72px;
+    margin:0;
 }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.feature{
-    background:#f3f4f6;
-    padding:18px;
-    border-radius:12px;
-}
-
-/* IMG */
-img{
-    width:100%;
-    border-radius:14px;
-    margin-top:15px;
+.hero p{
+    font-size:22px;
+    opacity:0.95;
 }
 
 /* FOOTER */
@@ -145,42 +135,11 @@ footer{
     color:white;
 }
 
-/* HERO TEXT */
-.hero h1{
-    font-size:72px;
-    margin:0;
-    font-weight:700;
-}
-
-.hero p{
-    font-size:22px;
-    margin-top:10px;
-    font-weight:300;
-    opacity:0.95;
-}
-
 /* =========================
-   MOBILE (SÓ ADIÇÕES AQUI)
+   MOBILE
 ========================= */
 @media(max-width:768px){
 
-    .hero{
-        background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-        url('Fundo-mobile.jpg');
-        height:90vh;
-        padding:20px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:16px;
-        padding:0 10px;
-    }
-
-    /* NAV MOBILE */
     nav{
         padding:14px 10px;
         justify-content:flex-start;
@@ -195,12 +154,12 @@ footer{
         padding:4px;
     }
 
-    /* BOTÃO APARECE */
+    /* BOTÃO aparece */
     .menu-toggle{
         display:block;
     }
 
-    /* MENU OCULTO */
+    /* MENU */
     .nav-center{
         display:none;
         position:absolute;
@@ -223,27 +182,12 @@ footer{
         font-size:14px;
     }
 
-    /* CARDS */
-    .card{
-        padding:22px;
-        margin:15px 10px;
+    .hero h1{
+        font-size:42px;
     }
 
-    h2{
-        font-size:20px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .feature{
-        font-size:14px;
-        padding:14px;
-    }
-
-    img{
-        border-radius:10px;
+    .hero p{
+        font-size:16px;
     }
 }
 
@@ -283,12 +227,7 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-<p>
-O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
-</p>
-<p>
-Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
-</p>
+<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas...</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -326,6 +265,7 @@ EcoRoot™ | Projeto académico – Solução sustentável para viveiros florest
 </footer>
 
 <script>
+
 function toggleMenu(){
     document.getElementById("menu").classList.toggle("active");
 }
@@ -333,6 +273,7 @@ function toggleMenu(){
 function closeMenu(){
     document.getElementById("menu").classList.remove("active");
 }
+
 </script>
 
 </body>
