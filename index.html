@@ -43,7 +43,7 @@ nav{
     top:0;
     width:100%;
     background:rgba(0,0,0,0.85);
-    padding:26px 20px; /* 🔥 ligeiramente maior */
+    padding:26px 20px;
     z-index:1000;
     backdrop-filter: blur(10px);
 
@@ -59,7 +59,7 @@ nav{
 }
 
 .nav-left img{
-    width:115px; /* 🔥 AUMENTADO */
+    width:115px;
     height:auto;
     object-fit:contain;
     background:white;
@@ -76,7 +76,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    font-size:14px;
+    font-size:16px;
     font-weight:500;
 }
 
@@ -130,6 +130,20 @@ footer{
     color:white;
 }
 
+/* HERO TEXT (ALTERAÇÃO AQUI) */
+.hero h1{
+    font-size:72px;   /* AUMENTADO */
+    margin:0;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:22px;   /* AUMENTADO */
+    margin-top:10px;
+    font-weight:300;
+    opacity:0.95;
+}
+
 /* MOBILE */
 @media(max-width:768px){
 
@@ -157,7 +171,7 @@ footer{
     }
 
     nav a{
-        font-size:12px;
+        font-size:13px;
     }
 }
 
@@ -186,13 +200,12 @@ footer{
 <section class="hero">
     <div>
         <h1>EcoRoot</h1>
-        <p>Cuvetes biodegradáveis com libertação controlada de nutrientes para uma produção florestal sustentável</p>
+        <p>Cuvetes biodegradáveis com libertação controlada de nutrientes</p>
     </div>
 </section>
 
 <section class="container">
 
-<!-- PRODUTO -->
 <div class="card" id="produto">
 <h2>O Produto</h2>
 
@@ -206,7 +219,6 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 
 </div>
 
-<!-- VANTAGENS -->
 <div class="card" id="vantagens">
 <h2>Principais Vantagens</h2>
 
@@ -221,48 +233,41 @@ Produzido a partir de biopolímeros de origem renovável e fibras naturais, o ma
 
 </div>
 
-<!-- FUNCIONAMENTO -->
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
 
 <p>
-A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da ação da humidade e da degradação do material biodegradável.
+A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), que são libertados gradualmente no solo através da humidade e da degradação do material biodegradável.
 </p>
 
 <p>
-A estrutura porosa do material facilita a circulação de água e oxigénio, criando condições ideais para o desenvolvimento saudável das raízes e promovendo um crescimento mais eficiente da planta.
+A estrutura porosa facilita a circulação de água e oxigénio, promovendo condições ideais para o desenvolvimento radicular.
 </p>
 
 </div>
 
-<!-- COMPOSIÇÃO -->
 <div class="card" id="composicao">
 <h2>Composição</h2>
 
 <p>
-O EcoRoot é composto por uma matriz de amido termoplástico (TPS), reforçada com fibras de celulose provenientes de resíduos agroindustriais e enriquecida com fertilizante NPK.
+O EcoRoot é composto por uma matriz de amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
 </p>
 
 <p>
-O amido garante biodegradabilidade e controlo da libertação de nutrientes, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural do material.
+O amido garante biodegradabilidade, enquanto as fibras aumentam a resistência mecânica e estabilidade estrutural.
 </p>
 
 <p>
-A incorporação de nutrientes permite que a cuvete funcione como um sistema ativo de suporte ao crescimento vegetal, reduzindo a necessidade de fertilização externa.
+A incorporação de nutrientes transforma a cuvete num sistema ativo de suporte ao crescimento vegetal.
 </p>
 
 </div>
 
-<!-- RÓTULO -->
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
 
 <p>
-O rótulo do EcoRoot inclui informação técnica essencial como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
-</p>
-
-<p>
-Inclui ainda um código QR que permite o acesso a informação adicional, recomendações de utilização e dados técnicos detalhados.
+O rótulo inclui informação técnica como composição, instruções de utilização e características do sistema de libertação controlada de nutrientes.
 </p>
 
 <img src="Rotulo.jpg">
