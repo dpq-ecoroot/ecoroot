@@ -37,7 +37,7 @@ body{
     padding:20px;
 }
 
-/* NAV */
+/* NAV (DESKTOP NÃO ALTERADO) */
 nav{
     position:fixed;
     top:0;
@@ -83,19 +83,14 @@ nav a{
 /* BOTÃO MENU */
 .menu-toggle{
     display:none;
-
     position:absolute;
-    right:18px;   /* 👈 FIXO À DIREITA */
+    right:18px;
     top:50%;
     transform:translateY(-50%);
-
     font-size:30px;
     color:white;
     cursor:pointer;
     user-select:none;
-
-    padding:8px;
-    border-radius:6px;
 }
 
 /* CONTAINER */
@@ -121,6 +116,8 @@ nav a{
 
 .hero p{
     font-size:22px;
+    margin-top:10px;
+    font-weight:300;
     opacity:0.95;
 }
 
@@ -133,31 +130,34 @@ footer{
 }
 
 /* =========================
-   MOBILE
+   MOBILE (SÓ AQUI MEXIDO)
 ========================= */
 @media(max-width:768px){
 
+    /* 🔼 BARRA MAIS ALTA (menos “apertada”) */
     nav{
-        padding:14px 14px;
+        padding:20px 14px;
         justify-content:flex-start;
     }
 
+    /* LOGO */
     .nav-left{
         left:10px;
     }
 
     .nav-left img{
-        width:75px;
+        width:80px;
         padding:4px;
     }
 
-    /* BOTÃO VISÍVEL À DIREITA SEM SAIR */
+    /* 🔘 BOTÃO MAIS PARA DENTRO (corrige saída do ecrã) */
     .menu-toggle{
         display:block;
-        right:14px;   /* 👈 garante margem dentro do ecrã */
+        right:10px;   /* 👈 antes estava muito colado ao limite */
+        font-size:28px;
     }
 
-    /* MENU */
+    /* MENU MOBILE */
     .nav-center{
         display:none;
         position:absolute;
@@ -180,12 +180,36 @@ footer{
         font-size:14px;
     }
 
+    /* HERO */
     .hero h1{
         font-size:42px;
     }
 
     .hero p{
         font-size:16px;
+    }
+
+    /* CARDS */
+    .card{
+        padding:22px;
+        margin:15px 10px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        font-size:14px;
+        padding:14px;
+    }
+
+    img{
+        border-radius:10px;
     }
 }
 
@@ -218,6 +242,43 @@ footer{
         <h1>EcoRoot</h1>
         <p>Cuvetes biodegradáveis com libertação controlada de nutrientes</p>
     </div>
+</section>
+
+<section class="container">
+
+<div class="card" id="produto">
+<h2>O Produto</h2>
+<p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas...</p>
+</div>
+
+<div class="card" id="vantagens">
+<h2>Principais Vantagens</h2>
+<div class="grid">
+<div class="feature">🌱 Redução do impacto ambiental associado ao plástico</div>
+<div class="feature">🌿 Menor stress radicular durante o transplante</div>
+<div class="feature">📈 Aumento da taxa de sobrevivência das plantas</div>
+<div class="feature">💧 Melhor desenvolvimento do sistema radicular</div>
+<div class="feature">🌾 Maior eficiência na utilização de fertilizantes</div>
+<div class="feature">⚙️ Integra suporte estrutural + nutrição</div>
+</div>
+</div>
+
+<div class="card" id="funcionamento">
+<h2>Como Funciona</h2>
+<p>A cuvete integra nutrientes essenciais...</p>
+</div>
+
+<div class="card" id="composicao">
+<h2>Composição</h2>
+<p>O EcoRoot é composto por...</p>
+</div>
+
+<div class="card" id="rotulo">
+<h2>Rótulo do Produto</h2>
+<p>O rótulo inclui informação técnica...</p>
+<img src="Rotulo.jpg">
+</div>
+
 </section>
 
 <footer>
