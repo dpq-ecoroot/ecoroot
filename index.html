@@ -60,12 +60,14 @@ nav{
 
 .nav-left img{
     width:115px;
+    height:auto;
+    object-fit:contain;
     background:white;
     padding:6px;
     border-radius:6px;
 }
 
-/* LINKS */
+/* MENU DESKTOP */
 .nav-center{
     display:flex;
     gap:22px;
@@ -88,7 +90,6 @@ nav a{
     font-size:30px;
     color:white;
     cursor:pointer;
-    user-select:none;
 }
 
 /* CONTAINER */
@@ -118,12 +119,13 @@ nav a{
 }
 
 /* =========================
-   MOBILE
+   MOBILE (SÓ AJUSTES REAIS)
 ========================= */
 @media(max-width:768px){
 
+    /* 🔲 BARRA MAIS ALTA */
     nav{
-        padding:34px 12px;
+        padding:40px 12px;
         justify-content:flex-start;
     }
 
@@ -131,6 +133,12 @@ nav a{
         display:block;
     }
 
+    .nav-left img{
+        width:75px;
+        padding:4px;
+    }
+
+    /* MENU NORMAL (SEM GRELHAS OU ORGANIZAÇÃO EXTRA) */
     .nav-center{
         display:none;
         position:absolute;
@@ -138,13 +146,10 @@ nav a{
         left:0;
         width:100%;
         background:rgba(0,0,0,0.95);
-
-        flex-direction:row;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:12px;
-
-        padding:12px 10px;
+        padding:12px 0;
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
     }
 
     .nav-center.active{
@@ -152,8 +157,21 @@ nav a{
     }
 
     nav a{
-        font-size:13px;
-        padding:6px 10px;
+        font-size:14px;
+        padding:8px 0;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:22px;
+        margin:15px 10px;
     }
 }
 
@@ -168,10 +186,8 @@ nav a{
         <img src="logo.png">
     </div>
 
-    <!-- BOTÃO -->
-    <div class="menu-toggle" id="menuBtn" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <!-- MENU -->
     <div class="nav-center" id="menu">
         <a href="#produto" onclick="closeMenu()">Produto</a>
         <a href="#vantagens" onclick="closeMenu()">Vantagens</a>
@@ -190,28 +206,32 @@ nav a{
     </div>
 </section>
 
+<section class="container">
+
+<div class="card">
+<h2>O Produto</h2>
+<p>Texto do produto...</p>
+</div>
+
+</section>
+
 <script>
 
 let open = false;
 
 function toggleMenu(){
     const menu = document.getElementById("menu");
-    const btn = document.getElementById("menuBtn");
-
     open = !open;
 
     if(open){
         menu.classList.add("active");
-        btn.innerHTML = "✕";
     } else {
         menu.classList.remove("active");
-        btn.innerHTML = "☰";
     }
 }
 
 function closeMenu(){
     document.getElementById("menu").classList.remove("active");
-    document.getElementById("menuBtn").innerHTML = "☰";
     open = false;
 }
 
