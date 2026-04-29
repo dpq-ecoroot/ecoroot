@@ -52,7 +52,7 @@ nav{
     justify-content:center;
 }
 
-/* LOGO */
+/* LOGO ESQUERDA */
 .nav-left{
     position:absolute;
     left:20px;
@@ -145,7 +145,7 @@ footer{
 }
 
 /* =========================
-   MOBILE (NAV 3 + 2)
+   MOBILE (3 em cima + 2 em baixo)
 ========================= */
 @media(max-width:768px){
 
@@ -163,17 +163,17 @@ footer{
         font-size:16px;
     }
 
-    /* NAV reorganizada em 2 linhas */
+    /* NAV MOBILE */
     nav{
         padding:12px 10px;
-        flex-direction:column;
-        align-items:center;
+        flex-direction:row;
+        align-items:flex-start;
     }
 
     .nav-left{
         position:relative;
         left:0;
-        margin-bottom:8px;
+        margin-right:10px;
     }
 
     .nav-left img{
@@ -181,20 +181,26 @@ footer{
         padding:4px;
     }
 
-    /* GRID 3 + 2 */
+    /* 🔥 GRID 3 EM CIMA + 2 EM BAIXO */
     .nav-center{
         display:grid;
         grid-template-columns:repeat(3, 1fr);
+        grid-template-rows:auto auto;
         gap:6px;
         width:100%;
         text-align:center;
     }
 
-    /* força os 5 itens a encaixar em 3+2 automaticamente */
     .nav-center a{
         font-size:11px;
         padding:6px 0;
         white-space:nowrap;
+    }
+
+    /* força quebra visual correta (3 + 2) */
+    .nav-center a:nth-child(4),
+    .nav-center a:nth-child(5){
+        grid-column: span 1;
     }
 
     .card{
@@ -254,7 +260,7 @@ footer{
 <div class="card" id="produto">
 <h2>O Produto</h2>
 <p>O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas.</p>
-<p>Permite o plantio direto no solo sem remoção do recipiente.</p>
+<p>Permite o plantio direto no solo sem necessidade de remoção do recipiente.</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -273,7 +279,7 @@ footer{
 
 <div class="card" id="funcionamento">
 <h2>Como Funciona</h2>
-<p>A cuvete liberta nutrientes gradualmente no solo através da humidade e biodegradação.</p>
+<p>A cuvete liberta nutrientes gradualmente no solo através da humidade e degradação.</p>
 <p>A estrutura porosa melhora água e oxigénio para as raízes.</p>
 </div>
 
