@@ -81,15 +81,41 @@ nav a{
     font-weight:500;
 }
 
-/* BOTÃO MENU */
+/* BOTÃO MENU ANIMADO */
 .menu-btn{
     display:none;
     position:absolute;
     right:6px;
-    font-size:36px;
-    color:white;
+    width:30px;
+    height:22px;
     cursor:pointer;
-    padding:8px 18px;
+}
+
+.menu-btn span{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:white;
+    left:0;
+    transition:0.3s;
+}
+
+.menu-btn span:nth-child(1){ top:0; }
+.menu-btn span:nth-child(2){ top:9px; }
+.menu-btn span:nth-child(3){ bottom:0; }
+
+.menu-btn.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:9px;
+}
+
+.menu-btn.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-btn.active span:nth-child(3){
+    transform:rotate(-45deg);
+    bottom:9px;
 }
 
 /* MENU MOBILE */
@@ -276,7 +302,11 @@ footer{
         <a href="#rotulo">Rótulo</a>
     </div>
 
-    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
 </nav>
 
@@ -301,7 +331,12 @@ footer{
 
 <div class="card" id="produto">
 <h2>O Produto</h2>
-<p>O EcoRoot consiste numa cuvete biodegradável...</p>
+<p>
+O EcoRoot consiste numa cuvete biodegradável desenvolvida para viveiros florestais e agrícolas, permitindo o plantio direto no solo sem necessidade de remoção do recipiente.
+</p>
+<p>
+Produzido a partir de biopolímeros de origem renovável e fibras naturais, o material garante suporte estrutural durante o crescimento inicial da planta e degrada-se progressivamente após o transplante.
+</p>
 </div>
 
 <div class="card" id="vantagens">
@@ -318,8 +353,31 @@ footer{
 
 </div>
 
+<div class="card" id="funcionamento">
+<h2>Como Funciona</h2>
+<p>
+A cuvete integra nutrientes essenciais (azoto, fósforo e potássio), libertados gradualmente no solo.
+</p>
+<p>
+A estrutura porosa facilita água e oxigénio para o desenvolvimento radicular.
+</p>
+</div>
+
+<div class="card" id="composicao">
+<h2>Composição</h2>
+<p>
+Amido termoplástico (TPS), fibras de celulose e fertilizante NPK.
+</p>
+<p>
+Material biodegradável e estrutural.
+</p>
+</div>
+
 <div class="card" id="rotulo">
 <h2>Rótulo do Produto</h2>
+<p>
+Informação técnica e instruções de utilização.
+</p>
 
 <img src="Rotulo.jpg" onclick="openLightbox(this.src)">
 
@@ -328,7 +386,7 @@ footer{
 </section>
 
 <footer>
-EcoRoot™ | Projeto académico
+EcoRoot™ | Projeto académico – Solução sustentável para viveiros florestais
 </footer>
 
 <!-- LIGHTBOX -->
@@ -344,18 +402,18 @@ function toggleMenu(){
     const menu = document.getElementById("mobileMenu");
     const btn = document.getElementById("menuBtn");
 
+    btn.classList.toggle("active");
+
     if(menu.style.maxHeight && menu.style.maxHeight !== "0px"){
         menu.style.maxHeight = "0px";
-        btn.innerHTML = "☰";
     } else {
         const navHeight = document.querySelector("nav").offsetHeight;
         menu.style.top = navHeight + "px";
         menu.style.maxHeight = "500px";
-        btn.innerHTML = "✕";
     }
+
 }
 
-/* LIGHTBOX */
 function openLightbox(src){
     document.getElementById("lightboxImg").src = src;
     document.getElementById("lightbox").style.display = "flex";
